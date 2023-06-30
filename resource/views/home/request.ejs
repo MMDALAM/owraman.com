@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html class="h-100" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="A growing collection of ready to use components for the CSS framework Bootstrap 5"
+    />
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.png" />
+    <meta name="author" content="Holger Koenemann" />
+    <meta name="generator" content="Eleventy v2.0.0" />
+    <meta name="HandheldFriendly" content="true" />
+    <title>ارتباط با استودیو اورامن</title>
+    <link rel="stylesheet" href="css/theme.min.css" />
+  </head>
+
+  <body
+    class="d-flex h-100 w-100"
+    data-bs-spy="scroll"
+    data-bs-target="#navScroll"
+    style="color: white"
+  >
+    <div class="h-100 container-fluid">
+      <div class="h-100 row d-flex align-items-stretch">
+        <div
+          class="col-12 col-md-7 col-lg-6 d-flex align-items-start flex-column px-vw-5"
+        >
+          <header class="mb-auto py-vh-2 col-12">
+            <a class="navbar-brand pe-4 fs-4" href="/">
+              <img
+              src="img/logo.png"
+              fill="currentColor"
+              class="bi bi-layers-half logo"
+              viewbox="0 0 16 16"
+              alt="logo"
+            >
+            </img>
+              <span class="ms-1 fw-bolder">استودیو اورامن</span>
+            </a>
+          </header>
+          <main class="mb-auto col-12">
+            <h1>درخواست ارسال مشاوره</h1>
+
+            <form action="/posted" method="post" class="row">
+              <input type="hidden" name="_csrf" value="<%= req.csrfToken() %>" />
+              <div class="col-12 col-lg-10 col-xl-8">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"
+                    >نام </label
+                  >
+                  <input
+                    type="text"
+                    name="name"
+                    class="form-control form-control-lg"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"
+                    >ایمیل </label
+                  >
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-control form-control-lg"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label"
+                    >تلفن تماس</label
+                  >
+                  <input
+                    type="number"
+                    name="tel"
+                    class="form-control form-control-lg"
+                    id="exampleInputPassword1"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label"
+                    > متن پیام  </label
+                  >
+                  <textarea
+                    name="message"
+                    class="form-control form-control-lg"
+                    id="exampleInputPassword1"
+                    rows="5" cols="10"
+                    maxlength="250" minlength="10"
+                    style="resize: none;"
+                  ></textarea>
+                </div>
+                <p style="margin-top: 1rem;" class="small text-muted">
+                  شما میتوانید درخواست مشاوره خود را برای استودیو اورامن ارسال کنید و با ما در ارتباط باشید
+                </p>
+                <button type="submit" class="btn btn-primary btn-xl "
+                style="
+                border-radius: 10px !important;
+                background-color: rgb(247, 48, 81);
+                margin-bottom: 1rem;
+              ">
+                  ارسال
+                </button>
+              </div>
+            </form>
+          </main>
+        </div>
+
+        <div
+          class="col-12 col-md-5 col-lg-6 bg-cover none"
+          style="background-image: url('./img/webp/colorful.jpg')"
+        ></div>
+      </div>
+    </div>
+  </body>
+</html>

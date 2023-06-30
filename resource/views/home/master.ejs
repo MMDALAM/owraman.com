@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html class="h-100" lang="fa">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="MohammadAlamzade" />
+    <meta name="author" content="MohammadAlamzade" />
+    <meta name="generator" content="owraman" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta
+      name="keywords"
+      content="برگزار کننده ورکشاپ های موسیقی,استودیو اورامن,خدمات موسیقی"
+    />
+    <meta property="og:title" content="استودیو اورامن" />
+    <title>اورامن</title>
+    <link rel="stylesheet" href="css/theme.min.css" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+
+    <%- style %>
+  </head>
+  <body>
+    <%- body %> <%- script %>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800, // values from 0 to 3000, with step 50ms
+      });
+    </script>
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/1.12.9.popper.min.js"></script>
+    <script src="/js/dom.js"></script>
+    <script src="/js/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="/css/sweetalert2.min.css" />
+
+    <script>
+      let scrollpos = window.scrollY;
+      const header = document.querySelector(".navbar");
+      const header_height = header.offsetHeight;
+
+      const add_class_on_scroll = () =>
+        header.classList.add("scrolled", "shadow-sm");
+      const remove_class_on_scroll = () =>
+        header.classList.remove("scrolled", "shadow-sm");
+
+      window.addEventListener("scroll", function () {
+        scrollpos = window.scrollY;
+
+        if (scrollpos >= header_height) {
+          add_class_on_scroll();
+        } else {
+          remove_class_on_scroll();
+        }
+
+        console.log(scrollpos);
+      });
+    </script>
+    <% let sweetalert = req.flash('sweetalert'); if(sweetalert.length) { let
+    data = sweetalert[0]; %>
+    <script>
+      Swal.fire({
+          title: '<%= data.title %>',
+          text: '<%= data.message %>',
+          icon: '<%= data.icon %>',
+          showConfirmButton: <%= data.button !== null ? true : false %>,
+          confirmButtonText: '<%= data.button %>',
+          timer : <%= data.button !== null ? 'null' : data.timer %>,
+        })
+    </script>
+    <% } %>
+  </body>
+</html>

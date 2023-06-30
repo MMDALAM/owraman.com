@@ -1,0 +1,38 @@
+{
+  "name": "mmdalam",
+  "version": "0.0.2",
+  "description": "mmdalam",
+  "main": "server.js",
+  "author": "MohammadAlamzade",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "app-module-path": "^2.2.0",
+    "auto-bind-inheritance": "^1.0.6",
+    "bcrypt": "^5.0.1",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^4.6.0",
+    "cookie-parser": "^1.4.6",
+    "cookie-session": "^2.0.0",
+    "csrf": "^3.1.0",
+    "csurf": "^1.11.0",
+    "dotenv": "^16.0.2",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-ejs-layouts": "^2.5.1",
+    "express-recaptcha": "^5.1.0",
+    "express-session": "^1.17.3",
+    "express-validator": "^6.14.2",
+    "helmet": "^3.23.3",
+    "mongoose": "^6.6.0",
+    "mongoose-paginate": "^5.0.3",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "sweetalert2": "^11.4.32"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="نمایشport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>پنل مدیریت</title>
+    <link rel="stylesheet" href="/css/bootstrap-min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-rtl.min.css" />
+    <link rel="stylesheet" href="/css/sweetalert2.min.css" />
+    <link rel="stylesheet" href="/css/admin.css" />
+    <%- style %>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/">owraman</a>
+      <input class="form-control form-control-dark w-100" />
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <form action="/admin/logout" method="post">
+            <input type="hidden" name="_csrf" value="<%= req.csrfToken() %>" />
+            <button
+              class="dropdown-item"
+              style="
+                color: #fff;
+                background-color: black;
+                border-radius: 0.5rem;
+              "
+            >
+              خروج
+            </button>
+          </form>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <main role="main" class="col-md-9 mr-sm-auto col-lg-10 pt-3 px-4">
+          <%- body %>
+        </main>
+
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column"></ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <script src="/js/jquery-3.2.1.slim.min.js"></script>
+    <script src="/js/1.12.9.popper.min.js"></script>
+    <script src="/js/holder.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/sweetalert2.min.js"></script>
+    <script src="/js/dom.js"></script>
+    <!-- Icons -->
+    <!-- don -->
+    <script>
+      feather.replace();
+    </script>
+    <%- script %>
+  </body>
+</html>
