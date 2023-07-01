@@ -73,9 +73,9 @@ module.exports = class Application {
       session({
         name: "owraman",
         secret: "731dc1eb45a96ab288a4a938b22eb4bf",
-        resave: false,
         saveUninitialized: true,
-        maxAge: 24 * 60 * 60 * 1000,
+        cookie: { maxAge: 24 * 60 * 60 * 1000 },
+        resave: false,
       })
     );
 

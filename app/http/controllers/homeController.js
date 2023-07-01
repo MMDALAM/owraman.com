@@ -31,20 +31,18 @@ class homeController extends controller {
         });
       }
 
-      const posteds = await Posted.findOne(
-        { tel: req.body.tel } || { email: req.body.email }
+      const posteds = await Posted.find(
+        { phone: req.body.phone } && { seen: false }
       ).sort({ createdAt: -1 });
 
-      if (posteds) {
-        if (posteds.seen === false) {
-          return this.alertAndBack(req, res, {
-            title: "دقت کنید",
-            message:
-              " درخواست قبلی شما در حال بررسی است لطفا منتظر تماس کارشناسان ما باشید",
-            button: " بسیار خب ",
-            icon: "error",
-          });
-        }
+      if (posteds.length >= 2) {
+        return this.alertAndBack(req, res, {
+          title: "دقت کنید",
+          message:
+            " شما 2 درخواست در حال بررسی دارید لطفا منتظر تماس کارشناسان ما باشید",
+          button: " بسیار خب ",
+          icon: "error",
+        });
       }
 
       let newPosted = new Posted({
